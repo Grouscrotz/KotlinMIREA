@@ -1,2 +1,2 @@
-# KotlinMIREA
-# KotlinMIREA
+# Практические работы по Котлин
+
