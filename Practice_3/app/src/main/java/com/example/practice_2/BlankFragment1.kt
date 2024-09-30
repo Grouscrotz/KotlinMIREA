@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class BlankFragment3 : Fragment() {
+class BlankFragment1 : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +20,7 @@ class BlankFragment3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank3, container, false)
+        return inflater.inflate(R.layout.fragment_blank1, container, false)
     }
 
     companion object {
@@ -27,6 +28,6 @@ class BlankFragment3 : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            BlankFragment3()
+            BlankFragment1()
             }
     }
