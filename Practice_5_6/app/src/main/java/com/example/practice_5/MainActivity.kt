@@ -6,24 +6,28 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
+@AndroidEntryPoint 
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var retrofit:Retrofit
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val db = MainDB.getDb(this)
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyjson.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
 
+        // hilt создаст экземпляр
         val todosApi = retrofit.create(TodosAPI::class.java)
 
 
