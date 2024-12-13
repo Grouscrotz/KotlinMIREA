@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                 // получаем данные с сервера по id, которое вводит пользователь
                 val todos = todosApi.getTodosById(editText.text.toString().toInt())
 
+
                 // записываем класс с данными с сервера в БД
                 db.getDao().insertProduct(todos)
 
@@ -51,7 +54,9 @@ class MainActivity : AppCompatActivity() {
                     editText.text.clear()
                 }
             }
+
         }
+
 
         val intent = Intent(this, ListActivity::class.java)
         buttonList.setOnClickListener {

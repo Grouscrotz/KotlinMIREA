@@ -19,6 +19,7 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -58,6 +59,7 @@ class MainActivity : AppCompatActivity() {
         val bitmap = withContext(Dispatchers.IO) {
             downloadImage(imageUrl) // Загружаем изображение
         }
+
 
 
         // Если изображение было успешно загружено, сохраняем его

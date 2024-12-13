@@ -40,6 +40,7 @@ class MainActivityTest {
     private val buttonDownload: Button = mock(Button::class.java)   // Мок для Button
     private val imageView: ImageView = mock(ImageView::class.java)  // Мок для ImageView
 
+
     // Метод выполняется перед каждым тестом для инициализации объектов
     @Before
     fun setUp() {
@@ -52,6 +53,8 @@ class MainActivityTest {
         mainActivity2.imageView = imageView
     }
 
+
+    @Before
     // Тест на успешную загрузку изображения
     @Test
     fun testDownloadImageSuccess() = runBlocking {

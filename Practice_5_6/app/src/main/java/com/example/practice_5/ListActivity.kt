@@ -19,6 +19,8 @@ class ListActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
         CoroutineScope(Dispatchers.IO).launch {
             val todos = db.getDao().getAllTodos()
 
